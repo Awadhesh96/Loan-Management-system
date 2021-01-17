@@ -6,8 +6,8 @@
 
 
 <?php 
+$con=mysqli_connect('localhost','root','','loan_management_system');
 
-$con=mysqli_connect('localhost','root','','loan management system');
 if(!$con){
     echo'Connection error'. mysqli_connect_errno();
 
@@ -48,12 +48,12 @@ if(isset($_POST['login'])) {
     // echo $row['pswd'];
     if($row['pswd'] == $pswd) {
       // echo "correct password";
-      header("Location: ../user_home.php?login=success");
       session_start();
       $_SESSION['usrname'] = $row['username'];
       $_SESSION['name'] = $row['name'];
-      $_SESSION['phno'] = $row['phno'];
-      $_SESSION[''];
+      $_SESSION['customer_id'] = $row['customer_id'];
+
+      header("Location: ../index.php?login=success");
     }
     else {
       // echo "wrong password";

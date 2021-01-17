@@ -2,6 +2,5 @@
     session_start();
     session_unset();
     session_destroy();
-
-    header("Location: ../login.php?logout=success");
+    header("Location: /Loan-Management-system/index.php?logout=success");
 ?>
